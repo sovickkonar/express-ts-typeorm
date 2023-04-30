@@ -1,5 +1,7 @@
 import express from 'express';
 import  {  BaseRoutes } from './routes';
+import { data_source } from './db';
+
 class Server {
     
     private app : express.Application;
@@ -28,8 +30,18 @@ class Server {
     routes(){
         this.app.use('/api',this.baseRoutes.router);
     }
-}
 
+
+}
 
 const server = new Server();
 server.start();
+
+// Initialize DB
+data_source.initialize()
+.then(()=>{
+    console.log('connection to db successfully');
+})
+.catch(err=>{
+    console.log('connection to db failed');
+})
