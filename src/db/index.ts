@@ -1,6 +1,8 @@
 import "reflect-metadata";
 import { DataSource } from 'typeorm';
 
+import { UserEntity } from './user.entity';
+
 export const data_source = new DataSource({
     type: "mysql",
     host: "localhost",
@@ -9,8 +11,8 @@ export const data_source = new DataSource({
     password: "",
     database: "typeorm-blogs",
     synchronize: true,
-    logging: true,
-    entities: [],
+    logging: false,
+    entities: [UserEntity],
     subscribers: [],
     migrations: [],
 });

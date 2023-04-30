@@ -43,5 +43,6 @@ data_source.initialize()
     console.log('connection to db successfully');
 })
 .catch(err=>{
+    console.log(err);
     console.log('connection to db failed');
 })
