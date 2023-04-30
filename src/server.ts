@@ -1,6 +1,6 @@
 import express from 'express';
 import  {  BaseRoutes } from './routes';
-import { data_source } from './db';
+import { AppSource } from './db';
 
 class Server {
     
@@ -38,7 +38,7 @@ const server = new Server();
 server.start();
 
 // Initialize DB
-data_source.initialize()
+AppSource.initialize()
 .then(()=>{
     console.log('connection to db successfully');
 })

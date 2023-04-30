@@ -3,7 +3,7 @@ import { DataSource } from 'typeorm';
 
 import { UserEntity } from './user.entity';
 
-export const data_source = new DataSource({
+export const AppSource = new DataSource({
     type: "mysql",
     host: "localhost",
     port: 3306,
